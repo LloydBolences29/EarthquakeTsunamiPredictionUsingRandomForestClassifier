@@ -14,6 +14,16 @@ y = data["tsunami"]
 #splitting of the datasets
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=0.2, random_state=42)
 
+
+#for decision tree
+#model creation
+# model = DecisionTreeClassifier() model.fit(x-train, y-train) 
+
+# #testing the model 
+# accuracy = model.score(x-test, y-test) 
+# print(f"Model Accuracy: {accuracy * 100:.2f}%")
+
+
 #model creation
 model = RandomForestClassifier(
     n_estimators=200,      # more trees
@@ -59,8 +69,8 @@ prediction_proba = model.predict_proba(user_input)
 # Show results
 print("\n--- Prediction Result ---")
 if prediction[0] == 1:
-    print("🌊 Tsunami Likely to Occur")
+    print("Tsunami Likely to Occur")
 else:
-    print("🌴 No Tsunami Expected")
+    print("No Tsunami Expected")
 
 print(f"Prediction Confidence: {max(prediction_proba[0]) * 100:.2f}%")
